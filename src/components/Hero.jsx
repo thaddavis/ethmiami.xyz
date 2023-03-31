@@ -17,7 +17,6 @@ export const Hero = () => {
       <div className="md:w-3/6 w-full">
         <div>
           <h1 className="text-white text-5xl font-bold">
-            Buy & Sell<br /><br />
             <span className="text-[#e32970]">glTF</span>
           </h1>
           <p className="text-gray-500 font-semibold text-sm mt-3">

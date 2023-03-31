@@ -7,7 +7,7 @@ import {
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { create } from "ipfs-http-client";
-// import { mintNFT } from "../Blockchain.Services";
+import { mintNFT } from "../Blockchain.services";
 
 const auth =
   "Basic " +
@@ -47,7 +47,7 @@ export const CreateNFT = () => {
 
       setLoadingMsg("Intializing transaction...");
       setFileUrl(metadataURI);
-    //   await mintNFT(nft);
+      await mintNFT(nft);
 
       resetForm();
       setAlert("Minting completed...", "green");

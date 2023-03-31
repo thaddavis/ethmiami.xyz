@@ -1,5 +1,5 @@
 import timelessLogo from '../assets/timeless.png'
-// import { connectWallet } from '../Blockchain.Services'
+import { connectWallet } from '../Blockchain.services'
 import { useGlobalState, truncate } from '../store'
 
 export const Header = () => {
@@ -21,7 +21,7 @@ export const Header = () => {
         {/* <li className="mx-4 cursor-pointer">Community</li> */}
       </ul>
 
-      {true ? (
+      {connectedAccount ? (
         <button
           className="shadow-xl shadow-black text-white
         bg-[#e32970] hover:bg-[#bd255f] md:text-xs p-2

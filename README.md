@@ -35,3 +35,9 @@ Migrate your smart contract each time your restart ganache.
 Visit this URL in your browser: http://localhost:3000
 
 https://stackblitz.com/github/tamani-coding/threejs-character-controls-example?file=src%2FcharacterControls.ts
+
+
+## TODO 
+
+Test Infura and ipfs integration
+

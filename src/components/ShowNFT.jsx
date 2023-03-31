@@ -1,7 +1,7 @@
 import Identicon from 'react-identicons'
 import { FaTimes } from 'react-icons/fa'
 import { useGlobalState, setGlobalState, truncate, setAlert } from '../store'
-// import { buyNFT } from '../Blockchain.Services'
+import { buyNFT } from '../Blockchain.services'
 
 export const ShowNFT = () => {
   const [showModal] = useGlobalState('showModal')

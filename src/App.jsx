@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-// import { getAllNFTs, isWallectConnected } from './Blockchain.Services'
-import { Alert } from './components/Alert'
+import { getAllNFTs, isWallectConnected } from './Blockchain.services'
+import * as Alert from './components/Alert'
 import { Artworks } from './components/Artworks'
 import { CreateNFT } from './components/CreateNFT'
 import { Footer } from './components/Footer'
@@ -9,13 +9,13 @@ import { Hero } from './components/Hero'
 import { Loading } from './components/Loading'
 import { ShowNFT } from './components/ShowNFT'
 import { Transactions } from './components/Transactions'
-// import UpdateNFT from './components/UpdateNFT'
+import { UpdateNFT } from './components/UpdateNFT'
 
 export const App = () => {
-  // useEffect(async () => {
-  //   await isWallectConnected()
-  //   await getAllNFTs()
-  // }, [])
+  useEffect(async () => {
+    // await isWallectConnected()
+    // await getAllNFTs()
+  }, [])
 
   return (
     <div className="min-h-screen">
@@ -28,8 +28,9 @@ export const App = () => {
       <CreateNFT />
       <ShowNFT />
       <Loading />
-      <Alert />
+      <Alert.Alert />
       <Footer />
+      <UpdateNFT />
     </div>
   )
 }
