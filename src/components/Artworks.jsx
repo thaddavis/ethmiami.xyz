@@ -56,7 +56,7 @@ const Card = ({ nft }) => {
       <img
         src={nft.metadataURI}
         alt={nft.title}
-        className="h-60 w-full object-cover shadow-md shadow-[#e32970] rounded-lg mb-3"
+        className={`h-auto w-100 aspect-[2142/1710] object-fit shadow-md shadow-[#e32970] rounded-lg mb-3`}
       />
       <h4 className="text-[#e32970] font-semibold">{nft.title}</h4>
       <p className="text-[#e32970] text-xs my-1">{nft.description}</p>

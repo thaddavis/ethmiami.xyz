@@ -59,7 +59,7 @@ export const Hero = () => {
         <img
           src={GatorV1}
           alt="NFT Art"
-          className="h-60 w-full object-cover"
+          className="h-auto w-full object-fit aspect-[2142/1710]"
         />
         <div className="flex justify-start items-center p-3">
           <Identicon
@@ -73,7 +73,7 @@ export const Hero = () => {
                 ? truncate(connectedAccount, 4, 4, 11)
                 : 'Connect Your Wallet'} */}
             </p>
-            <small className="text-pink-800 font-bold">@you</small>
+            <small className="text-pink-800 font-bold">@VeX</small>
           </div>
         </div>
       </div>

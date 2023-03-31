@@ -1,5 +1,6 @@
 import { createGlobalState } from 'react-hooks-global-state'
 import GatorV1 from '../assets/AlligatorV1.png'
+import Flamingo from '../assets/flamingo.png'
 
 const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
   modal: 'scale-0',
@@ -14,12 +15,14 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
     metadataURI: GatorV1,
     title: "Florida Gator",
     description: "Green",
+    aspectRatio: "aspect-[2142/1710]",
     cost: 100,
   }, {
     // metadataURI: "https://images.cointelegraph.com/images/1434_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjEtMDYvNGE4NmNmOWQtODM2Mi00YmVhLThiMzctZDEyODAxNjUxZTE1LmpwZWc=.jpg",
-    metadataURI: GatorV1,
+    metadataURI: Flamingo,
     title: "Okeechobee Flamingo",
     description: "Pink",
+    aspectRatio: "aspect-[1240/1240]",
     cost: 100,
   }],
   transactions: [
