@@ -1,4 +1,5 @@
 import { createGlobalState } from 'react-hooks-global-state'
+import GatorV1 from '../assets/AlligatorV1.png'
 
 const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
   modal: 'scale-0',
@@ -9,12 +10,14 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
   connectedAccount: '',
   nft: null,
   nfts: [{
-    metadataURI: "https://images.cointelegraph.com/images/1434_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjEtMDYvNGE4NmNmOWQtODM2Mi00YmVhLThiMzctZDEyODAxNjUxZTE1LmpwZWc=.jpg",
+    // metadataURI: "https://images.cointelegraph.com/images/1434_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjEtMDYvNGE4NmNmOWQtODM2Mi00YmVhLThiMzctZDEyODAxNjUxZTE1LmpwZWc=.jpg",
+    metadataURI: GatorV1,
     title: "Florida Gator",
     description: "Green",
     cost: 100,
   }, {
-    metadataURI: "https://images.cointelegraph.com/images/1434_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjEtMDYvNGE4NmNmOWQtODM2Mi00YmVhLThiMzctZDEyODAxNjUxZTE1LmpwZWc=.jpg",
+    // metadataURI: "https://images.cointelegraph.com/images/1434_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjEtMDYvNGE4NmNmOWQtODM2Mi00YmVhLThiMzctZDEyODAxNjUxZTE1LmpwZWc=.jpg",
+    metadataURI: GatorV1,
     title: "Okeechobee Flamingo",
     description: "Pink",
     cost: 100,

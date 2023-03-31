@@ -1,6 +1,8 @@
 import Identicon from 'react-identicons'
 import { setGlobalState, useGlobalState, truncate } from '../store'
 
+import GatorV1 from '../assets/AlligatorV1.png'
+
 export const Hero = () => {
 //   const [connectedAccount] = useGlobalState('connectedAccount')
   const onCreatedNFT = () => {
@@ -55,7 +57,7 @@ export const Hero = () => {
       mt-10 md:mt-0 rounded-md overflow-hidden bg-white"
       >
         <img
-          src="https://images.cointelegraph.com/images/1434_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjEtMDYvNGE4NmNmOWQtODM2Mi00YmVhLThiMzctZDEyODAxNjUxZTE1LmpwZWc=.jpg"
+          src={GatorV1}
           alt="NFT Art"
           className="h-60 w-full object-cover"
         />
