@@ -1,5 +1,6 @@
 import Identicon from "react-identicons";
 import { setGlobalState, useGlobalState, truncate } from "../store";
+import NeonBox from './NeonBox';
 
 import GatorV1 from "../assets/AlligatorV1.png";
 
@@ -39,18 +40,21 @@ export const Hero = () => {
           </button>
         </div> */}
 
-        <div className="w-3/4 flex justify-between items-center mt-5">
+        <div className="w-3/4 flex justify-between items-center mt-5 py-6">
           <div>
-            <p className="text-[#12c0f1] text-xl font-bold">3</p>
-            <small className="text-[#12c0f1] text-xl">Gators</small>
+            {/* <p className="text-[#12c0f1] text-xl font-bold">3</p>
+            <small className="text-[#12c0f1] text-xl">Gators</small> */}
+            <NeonBox number={3} name={"Gators"} />
           </div>
           <div>
-            <p className="text-[#12c0f1] text-xl font-bold">0</p>
-            <small className="text-[#12c0f1] text-xl">Flamingos</small>
+            {/* <p className="text-[#12c0f1] text-xl font-bold">0</p>
+            <small className="text-[#12c0f1] text-xl">Flamingos</small> */}
+            <NeonBox number={0} name={"Flamingos"} />
           </div>
           <div>
-            <p className="text-[#12c0f1] text-xl font-bold">5</p>
-            <small className="text-[#12c0f1] text-xl">Dolphins</small>
+            {/* <p className="text-[#12c0f1] text-xl font-bold">5</p>
+            <small className="text-[#12c0f1] text-xl">Dolphins</small> */}
+            <NeonBox number={5} name={"Dolphins"} />
           </div>
         </div>
       </div>
