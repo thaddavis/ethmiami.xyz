@@ -6,7 +6,7 @@ import {
 } from "../store";
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import { create } from "ipfs-http-client";
+// import { create } from "ipfs-http-client";
 import { mintNFT } from "../Blockchain.services";
 
 const auth =
@@ -15,14 +15,14 @@ const auth =
     process.env.REACT_APP_INFURIA_PID + ":" + process.env.REACT_APP_INFURIA_API
   ).toString("base64");
 
-const client = create({
-  host: "ipfs.infura.io",
-  port: 5001,
-  protocol: "https",
-  headers: {
-    authorization: auth,
-  },
-});
+// const client = create({
+//   host: "ipfs.infura.io",
+//   port: 5001,
+//   protocol: "https",
+//   headers: {
+//     authorization: auth,
+//   },
+// });
 
 export const CreateNFT = () => {
   const [modal] = useGlobalState("modal");
@@ -41,8 +41,8 @@ export const CreateNFT = () => {
     setGlobalState("loading", { show: true, msg: "Uploading IPFS data..." });
 
     try {
-      const created = await client.add(fileUrl);
-      const metadataURI = `https://ipfs.io/ipfs/${created.path}`;
+      // const created = await client.add(fileUrl);
+      // const metadataURI = `https://ipfs.io/ipfs/${created.path}`;
       const nft = { title, price, description, metadataURI };
 
       setLoadingMsg("Intializing transaction...");
@@ -121,7 +121,7 @@ export const CreateNFT = () => {
               <span className="sr-only">Choose profile photo</span>
               <input
                 type="file"
-                accept="image/png, image/gif, image/jpeg, image/webp"
+                accept="model/gltf-binary"
                 className="block w-full text-sm text-slate-500
                     file:mr-4 file:py-2 file:px-4
                     file:rounded-full file:border-0

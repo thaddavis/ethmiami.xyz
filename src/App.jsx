@@ -1,36 +1,29 @@
-import { useEffect } from 'react'
-import { getAllNFTs, isWallectConnected } from './Blockchain.services'
-import * as Alert from './components/Alert'
-import { Artworks } from './components/Artworks'
-import { CreateNFT } from './components/CreateNFT'
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { Loading } from './components/Loading'
-import { ShowNFT } from './components/ShowNFT'
-import { Transactions } from './components/Transactions'
-import { UpdateNFT } from './components/UpdateNFT'
+import { useEffect } from "react";
+import { getAllNFTs, isWallectConnected } from "./Blockchain.services";
+import { MainLayout } from "./layouts/MainLayout";
+import { Visualizer } from "./layouts/Visualizer";
+import { Routes, Route, Outlet } from "react-router-dom";
 
 export const App = () => {
   useEffect(async () => {
     // await isWallectConnected()
     // await getAllNFTs()
-  }, [])
+  }, []);
 
   return (
-    <div className="min-h-screen">
-      <div className="gradient-bg-hero">
-        <Header />
-        <Hero />
-      </div>
-      <Artworks />
-      <Transactions />
-      <CreateNFT />
-      <ShowNFT />
-      <Loading />
-      <Alert.Alert />
-      <Footer />
-      <UpdateNFT />
-    </div>
-  )
-}
+    <>
+      <Routes>
+        <Route path="/3d" element={<Visualizer />} />
+        <Route path="/" element={<MainLayout />} />
+        <Route path="*" element={<>Not Found</>} />
+        {/* <Route path="" element={<Home />} /> */}
+        {/* <Route path="/dashboard/" element={<TopHeaderWithDynamicPage />}> */}
+        {/* <Route path="" element={<Container />} /> */}
+        {/* <Route path="" element={<Main />} /> */}
+        {/* <Route path="contract/:address" element={<Contract />} /> */}
+        {/* </Route> */}
+        {/* <Route path="*" element={<>Not Found</>} /> */}
+      </Routes>
+    </>
+  );
+};
