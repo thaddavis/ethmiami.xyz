@@ -24,10 +24,15 @@ export const Artworks = () => {
           {collection.length > 0 ? "Featured" : "No Artwork Yet"}
         </h4>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-3 py-2.5">
-          {collection.map((nft, i) => (
-            <Card key={i} nft={nft} />
-          ))}
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-3 py-2.5"> */}
+        {/* <div className="container mx-auto px-4 py-8"> */}
+        {/* <div className="bg-white shadow-md rounded-lg p-6 mx-2 my-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3"> */}
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex flex-wrap m-2">
+            {collection.map((nft, i) => (
+              <Card key={i} nft={nft} />
+            ))}
+          </div>
         </div>
 
         {/* {collection.length > 0 && nfts.length > collection.length ? (
@@ -56,19 +61,15 @@ const Card = ({ nft }) => {
   };
 
   return (
-    <div className="w-full shadow-lg shadow-[#e32970] rounded-md overflow-hidden bg-white my-2 p-3">
-      <div className="box-content h-80 mb-6">
-        <div className="grid place-items-center">
-          <img
-            src={nft.metadataURI}
-            alt={nft.title}
-            className={`h-80 w-auto ${nft.aspectRatio} object-fit shadow-md shadow-[#e32970] rounded-lg mb-3`}
-          />
-        </div>
-      </div>
-      <h4 className="text-[#e32970] font-semibold">{nft.title}</h4>
-      <p className="text-[#e32970] text-xs my-1">{nft.description}</p>
-      <div className="flex justify-between items-center mt-3 text-[#e32970]">
+    <div className="bg-white shadow-md rounded-lg p-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mx-auto my-4">
+      <img
+        className="w-full h-48 object-contain aspect-square object-center mb-4 rounded"
+        src={nft.metadataURI}
+        alt={nft.title}
+      />
+      <h2 className="text-xl font-semibold mb-2">{nft.title}</h2>
+
+      <div className="flex flex-col justify-between items-center mt-3 text-[#e32970]">
         <div className="flex flex-col">
           <small className="text-xs">Current Price</small>
           <p className="text-sm font-semibold">{nft.cost} ETH</p>
