@@ -57,11 +57,15 @@ const Card = ({ nft }) => {
 
   return (
     <div className="w-full shadow-lg shadow-[#e32970] rounded-md overflow-hidden bg-white my-2 p-3">
-      <img
-        src={nft.metadataURI}
-        alt={nft.title}
-        className={`h-auto w-100 ${nft.aspectRatio} object-fit shadow-md shadow-[#e32970] rounded-lg mb-3`}
-      />
+      <div className="box-content h-80 mb-6">
+        <div className="grid place-items-center">
+          <img
+            src={nft.metadataURI}
+            alt={nft.title}
+            className={`h-80 w-auto ${nft.aspectRatio} object-fit shadow-md shadow-[#e32970] rounded-lg mb-3`}
+          />
+        </div>
+      </div>
       <h4 className="text-[#e32970] font-semibold">{nft.title}</h4>
       <p className="text-[#e32970] text-xs my-1">{nft.description}</p>
       <div className="flex justify-between items-center mt-3 text-[#e32970]">
