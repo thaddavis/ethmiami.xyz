@@ -1,8 +1,9 @@
 import Identicon from "react-identicons";
 import { setGlobalState, useGlobalState, truncate } from "../store";
-import NeonBox from './NeonBox';
+import NeonBox from "./NeonBox";
 
-import GatorV1 from "../assets/AlligatorV1.png";
+// import GatorV1 from "../assets/AlligatorV1.png";
+import Alligator from "../assets/AlligatorCROPPED.png";
 
 import { useNavigate } from "react-router-dom";
 
@@ -22,10 +23,10 @@ export const Hero = () => {
       <div className="md:w-3/6 w-full">
         <div>
           <h1 className="text-white text-5xl font-bold">
-            <span className="text-[#e32970]">glTF</span>
+            <span className="text-[#e32970]">ETHMiami.xyz</span>
           </h1>
           <p className="text-gray-500 font-semibold text-sm mt-3">
-            The best 3d art from the ETHMiami community
+            How much are you really trying to chill?
           </p>
         </div>
 
@@ -41,20 +42,20 @@ export const Hero = () => {
         </div> */}
 
         <div className="w-3/4 flex justify-between items-center mt-5 py-6">
-          <div>
-            {/* <p className="text-[#12c0f1] text-xl font-bold">3</p>
-            <small className="text-[#12c0f1] text-xl">Gators</small> */}
-            <NeonBox number={3} name={"Gators"} />
+          <div className="m-2">
+            <p className="text-[#12c0f1] text-3xl font-bold">3</p>
+            <small className="text-[#12c0f1] text-2xl">Gators</small>
+            {/* <NeonBox number={3} name={"Gators"} /> */}
           </div>
-          <div>
-            {/* <p className="text-[#12c0f1] text-xl font-bold">0</p>
-            <small className="text-[#12c0f1] text-xl">Flamingos</small> */}
-            <NeonBox number={0} name={"Flamingos"} />
+          <div className="m-2">
+            <p className="text-[#12c0f1] text-3xl font-bold">0</p>
+            <small className="text-[#12c0f1] text-2xl">Flamingos</small>
+            {/* <NeonBox number={0} name={"Flamingos"} /> */}
           </div>
-          <div>
-            {/* <p className="text-[#12c0f1] text-xl font-bold">5</p>
-            <small className="text-[#12c0f1] text-xl">Dolphins</small> */}
-            <NeonBox number={5} name={"Dolphins"} />
+          <div className="m-2">
+            <p className="text-[#12c0f1] text-3xl font-bold">5</p>
+            <small className="text-[#12c0f1] text-2xl">Dolphins</small>
+            {/* <NeonBox number={5} name={"Dolphins"} /> */}
           </div>
         </div>
       </div>
@@ -68,9 +69,9 @@ export const Hero = () => {
         }}
       >
         <img
-          src={GatorV1}
+          src={Alligator}
           alt="NFT Art"
-          className="h-auto w-full object-fit aspect-[2142/1710]"
+          className="h-auto w-full object-contain aspect-square"
         />
         <div className="flex justify-start items-center p-3">
           <Identicon

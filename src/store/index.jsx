@@ -1,6 +1,8 @@
 import { createGlobalState } from "react-hooks-global-state";
-import GatorV1 from "../assets/AlligatorV1.png";
-import Flamingo from "../assets/flamingo.png";
+// import GatorV1 from "../assets/AlligatorV1.png";
+import GatorCropped from "../assets/AlligatorCROPPED.png";
+// import Flamingo from "../assets/flamingo.png";
+import FlamingoCropped from "../assets/FlamingoCROPPED.png";
 import Dolphin from "../assets/dolphin.png";
 import Panther from "../assets/panther.png";
 
@@ -17,8 +19,8 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
   nfts: [
     {
       id: "gator",
-      metadataURI: GatorV1,
-      title: "Florida Gator",
+      metadataURI: GatorCropped,
+      title: "Gator",
       description: "Green",
       aspectRatio: "aspect-[2142/1710]",
       model: "gator.glb",
@@ -29,20 +31,20 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
     },
     {
       id: "flamingo",
-      metadataURI: Flamingo,
-      title: "Okeechobee Flamingo",
+      metadataURI: FlamingoCropped,
+      title: "Flamingo",
       description: "Pink",
       aspectRatio: "aspect-[1240/1240]",
       model: "flamingo.glb",
       position: new THREE.Vector3(0, 0, 0),
       scale: new THREE.Vector3(0.4, 0.4, 0.4),
-      cameraPosition: [0, 40, 80],
+      cameraPosition: [0, -30, 90],
       cost: 100,
     },
     {
       id: "dolphin",
       metadataURI: Dolphin,
-      title: "Miami Dolphin",
+      title: "Dolphin",
       description: "Grey",
       aspectRatio: "aspect-[2228/1340]",
       model: "dolphin.glb",
@@ -51,18 +53,18 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
       cameraPosition: [],
       cost: 100,
     },
-    {
-      id: "panther",
-      metadataURI: Panther,
-      title: "Florida Panther",
-      description: "Beige",
-      aspectRatio: "aspect-[1168/1442]",
-      model: "panther.glb",
-      position: [],
-      scale: [],
-      cameraPosition: [],
-      cost: 100,
-    },
+    // {
+    //   id: "panther",
+    //   metadataURI: Panther,
+    //   title: "Florida Panther",
+    //   description: "Beige",
+    //   aspectRatio: "aspect-[1168/1442]",
+    //   model: "panther.glb",
+    //   position: [],
+    //   scale: [],
+    //   cameraPosition: [],
+    //   cost: 100,
+    // },
   ],
   transactions: [
     {
