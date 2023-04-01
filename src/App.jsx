@@ -13,7 +13,7 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/3d" element={<Visualizer />} />
+        <Route path="/3d/:model" element={<Visualizer />} />
         <Route path="/" element={<MainLayout />} />
         <Route path="*" element={<>Not Found</>} />
         {/* <Route path="" element={<Home />} /> */}

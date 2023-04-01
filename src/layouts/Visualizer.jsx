@@ -2,11 +2,24 @@ import React, { Suspense } from "react";
 import { useLoader, Canvas } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
+import { useParams } from "react-router-dom";
+
+import { getGlobalState } from "../store";
+
 import { Stats, OrbitControls, Center } from "@react-three/drei";
 import * as THREE from "three";
 
 export const Visualizer = () => {
-  const gltf = useLoader(GLTFLoader, "/gator.glb");
+  const { model } = useParams();
+  const gltf = useLoader(GLTFLoader, `/${model}.glb`);
+
+  const nfts = getGlobalState("nfts") || [];
+
+  const modelInfo = nfts.find((obj) => {
+    return obj.id === model;
+  });
+
+  console.log("model", model, modelInfo);
 
   return (
     <div style={{ width: "100%", height: "100vh" }}>
@@ -14,7 +27,7 @@ export const Visualizer = () => {
       <Canvas
         dpr={window.devicePixelRatio}
         camera={{
-          position: [0, 40, 80],
+          position: modelInfo.cameraPosition,
           fov: 45,
         }}
       >
@@ -27,17 +40,17 @@ export const Visualizer = () => {
         <ambientLight />
         <primitive
           object={gltf.scene}
-          position={new THREE.Vector3(0, -10, 0)}
-          scale={new THREE.Vector3(0.4, 0.4, 0.4)}
+          position={modelInfo.position}
+          scale={modelInfo.scale}
         />
         ;
         <primitive
           object={new THREE.AxesHelper(10)}
-          position={new THREE.Vector3(0, -10, 0)}
+          position={modelInfo.position}
         />
         <primitive
           object={new THREE.GridHelper(10)}
-          position={new THREE.Vector3(0, -10, 0)}
+          position={modelInfo.position}
         />
         {/* <OrbitControls /> */}
       </Canvas>

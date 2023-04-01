@@ -41,16 +41,16 @@ export const Hero = () => {
 
         <div className="w-3/4 flex justify-between items-center mt-5">
           <div>
-            <p className="text-[#e32970] font-bold">3</p>
-            <small className="text-[#e32970]">Gators</small>
+            <p className="text-[#12c0f1] text-xl font-bold">3</p>
+            <small className="text-[#12c0f1] text-xl">Gators</small>
           </div>
           <div>
-            <p className="text-[#e32970] font-bold">0</p>
-            <small className="text-[#e32970]">Flamingos</small>
+            <p className="text-[#12c0f1] text-xl font-bold">0</p>
+            <small className="text-[#12c0f1] text-xl">Flamingos</small>
           </div>
           <div>
-            <p className="text-[#e32970] font-bold">5</p>
-            <small className="text-[#e32970]">Dolphins</small>
+            <p className="text-[#12c0f1] text-xl font-bold">5</p>
+            <small className="text-[#12c0f1] text-xl">Dolphins</small>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@ export const Hero = () => {
       mt-10 md:mt-0 rounded-md overflow-hidden bg-white"
         onClick={() => {
           console.log("___ ___ ___");
-          navigate("/3d");
+          navigate("/3d/gator");
         }}
       >
         <img
