@@ -1,13 +1,17 @@
-import Identicon from 'react-identicons'
-import { setGlobalState, useGlobalState, truncate } from '../store'
+import Identicon from "react-identicons";
+import { setGlobalState, useGlobalState, truncate } from "../store";
 
-import GatorV1 from '../assets/AlligatorV1.png'
+import GatorV1 from "../assets/AlligatorV1.png";
+
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
-//   const [connectedAccount] = useGlobalState('connectedAccount')
+  //   const [connectedAccount] = useGlobalState('connectedAccount')
+  const navigate = useNavigate();
+
   const onCreatedNFT = () => {
-    setGlobalState('modal', 'scale-100')
-  }
+    setGlobalState("modal", "scale-100");
+  };
 
   return (
     <div
@@ -37,16 +41,16 @@ export const Hero = () => {
 
         <div className="w-3/4 flex justify-between items-center mt-5">
           <div>
-            <p className="text-[#e32970] font-bold">1231k</p>
+            <p className="text-[#e32970] font-bold">3</p>
             <small className="text-[#e32970]">Gators</small>
           </div>
           <div>
-            <p className="text-[#e32970] font-bold">152k</p>
-            <small className="text-[#e32970]">Dolphins</small>
+            <p className="text-[#e32970] font-bold">0</p>
+            <small className="text-[#e32970]">Flamingos</small>
           </div>
           <div>
-            <p className="text-[#e32970] font-bold">200k</p>
-            <small className="text-[#e32970]">Flamingos</small>
+            <p className="text-[#e32970] font-bold">5</p>
+            <small className="text-[#e32970]">Dolphins</small>
           </div>
         </div>
       </div>
@@ -54,6 +58,10 @@ export const Hero = () => {
       <div
         className="shadow-lg shadow-[#e32970] md:w-2/5 w-full 
       mt-10 md:mt-0 rounded-md overflow-hidden bg-white"
+        onClick={() => {
+          console.log("___ ___ ___");
+          navigate("/3d");
+        }}
       >
         <img
           src={GatorV1}
@@ -77,7 +85,7 @@ export const Hero = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 // export default Hero
