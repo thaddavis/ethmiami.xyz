@@ -6,7 +6,7 @@ import { Stats, OrbitControls, Center } from "@react-three/drei";
 import * as THREE from "three";
 
 export const Visualizer = () => {
-  const gltf = useLoader(GLTFLoader, "/gator_wip.glb");
+  const gltf = useLoader(GLTFLoader, "/gator.glb");
 
   return (
     <div style={{ width: "100%", height: "100vh" }}>
@@ -14,20 +14,31 @@ export const Visualizer = () => {
       <Canvas
         dpr={window.devicePixelRatio}
         camera={{
-          position: [0, 2, 10],
+          position: [0, 40, 80],
           fov: 45,
         }}
       >
         <OrbitControls
-          enableZoom={false}
+          enableZoom={true}
           rotateSpeed={2}
           autoRotate={true}
           autoRotateSpeed={5}
         />
         <ambientLight />
-        <primitive object={gltf.scene} />;
-        <primitive object={new THREE.AxesHelper(10)} />
-        <primitive object={new THREE.GridHelper(10)} />
+        <primitive
+          object={gltf.scene}
+          position={new THREE.Vector3(0, -10, 0)}
+          scale={new THREE.Vector3(0.4, 0.4, 0.4)}
+        />
+        ;
+        <primitive
+          object={new THREE.AxesHelper(10)}
+          position={new THREE.Vector3(0, -10, 0)}
+        />
+        <primitive
+          object={new THREE.GridHelper(10)}
+          position={new THREE.Vector3(0, -10, 0)}
+        />
         {/* <OrbitControls /> */}
       </Canvas>
     </div>
