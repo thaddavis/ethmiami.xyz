@@ -77,3 +77,15 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.payButton {
+  background: blueviolet!important;
+}
+.payButton span {
+  display: none;
+}
+.payButton:after {
+  background-color: blueviolet;
+  content: "Buy";
+  color: white; 
+}
