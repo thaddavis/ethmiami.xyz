@@ -28,7 +28,7 @@ export const Hero = () => {
           </p>
         </div>
 
-        <div className="flex flex-row mt-5">
+        {/* <div className="flex flex-row mt-5">
           <button
             className="shadow-sm shadow-black text-white
             bg-[#e32970] hover:bg-[#bd255f]
@@ -37,7 +37,7 @@ export const Hero = () => {
           >
             Create NFT
           </button>
-        </div>
+        </div> */}
 
         <div className="w-3/4 flex justify-between items-center mt-5">
           <div>
