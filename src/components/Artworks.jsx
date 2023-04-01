@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { setGlobalState, useGlobalState } from "../store";
 
 import { useNavigate } from "react-router-dom";
+import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
 
 export const Artworks = () => {
   const [nfts] = useGlobalState("nfts");
@@ -23,6 +24,12 @@ export const Artworks = () => {
         <h4 className="text-[#e32970] text-3xl font-bold uppercase">
           {collection.length > 0 ? "Featured" : "No Artwork Yet"}
         </h4>
+
+        <CrossmintPayButton
+          clientId="80c3f288-e48b-4fb6-a7dc-3d43ca029451"
+          mintConfig={{"type":"thirdweb-drop","totalPrice":"0.001","quantity":"1"}}
+          environment="staging"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-3 py-2.5">
           {collection.map((nft, i) => (
