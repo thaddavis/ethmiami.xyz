@@ -12,7 +12,7 @@ export const Visualizer = () => {
     <div style={{ width: "100%", height: "100vh" }}>
       {/* <div> */}
       <Canvas
-        // dpr={window.devicePixelRatio}
+        dpr={window.devicePixelRatio}
         camera={{
           position: [0, 2, 10],
           fov: 45,
