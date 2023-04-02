@@ -9,11 +9,12 @@ export const Alligator = (props) => {
   //   const model = useLoader(GLTFLoader, "/gator.glb");
   // const model = useLoader(GLTFLoader, "/gator_anim.glb");
   // const model = useLoader(GLTFLoader, "/gator_anim_B.glb");
-  const model = useLoader(GLTFLoader, "/gator_anim_02.gltf", (loader) => {
-    const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath("/draco-gltf/");
-    loader.setDRACOLoader(dracoLoader);
-  });
+  // const model = useLoader(GLTFLoader, "/gator_anim_02.gltf", (loader) => {
+  //   const dracoLoader = new DRACOLoader();
+  //   dracoLoader.setDecoderPath("/");
+  //   loader.setDRACOLoader(dracoLoader);
+  // });
+  const model = useLoader(GLTFLoader, "/gator_03.glb");
 
   // Here's the animation part
   // *************************

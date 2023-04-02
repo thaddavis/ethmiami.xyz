@@ -21,7 +21,7 @@ export const Header = () => {
         {/* <li className="mx-4 cursor-pointer">Community</li> */}
       </ul>
 
-      {connectedAccount ? (
+      {/* {connectedAccount ? (
         <button
           className="shadow-xl shadow-black text-white
         bg-[#e32970] hover:bg-[#bd255f] md:text-xs p-2
@@ -38,7 +38,7 @@ export const Header = () => {
         >
           Connect Wallet
         </button>
-      )}
+      )} */}
     </nav>
   );
 };
