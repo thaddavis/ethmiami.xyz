@@ -80,7 +80,11 @@ const Card = ({ nft }) => {
             className="shadow-md shadow-black text-white text-sm bg-[#e32970]
             hover:bg-[#bd255f] cursor-pointer rounded-full px-4 py-2 m-1"
             onClick={() => {
-              if (nft.id === "gator" || nft.id === "flamingo") {
+              if (
+                nft.id === "gator" ||
+                nft.id === "flamingo" ||
+                nft.id === "dolphin"
+              ) {
                 navigate(`/3d/${nft.id}`);
               } else {
               }

@@ -4,6 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 import { Flamingo } from "../components/Flamingo";
 import { Alligator } from "../components/Alligator";
+import { Dolphin } from "../components/Dolphin";
 
 import { useParams } from "react-router-dom";
 
@@ -36,6 +37,15 @@ export const Visualizer = () => {
       modelComponent = (
         <Alligator position={modelInfo.position} scale={modelInfo.scale} />
       );
+      break;
+    case "dolphin":
+      console.log("case in point");
+      modelComponent = (
+        <Dolphin position={modelInfo.position} scale={modelInfo.scale} />
+      );
+      // modelComponent = (
+      //   <Flamingo position={modelInfo.position} scale={modelInfo.scale} />
+      // );
       break;
     case "":
       break;
