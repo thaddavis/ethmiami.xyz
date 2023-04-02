@@ -29,7 +29,7 @@ export const Artworks = () => {
         {/* <div className="container mx-auto px-4 py-8"> */}
         {/* <div className="bg-white shadow-md rounded-lg p-6 mx-2 my-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3"> */}
         <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-wrap m-2">
+          <div className="flex flex-wrap">
             {collection.map((nft, i) => (
               <Card key={i} nft={nft} />
             ))}
@@ -63,7 +63,8 @@ const Card = ({ nft }) => {
 
   return (
     <>
-      <div className="bg-white shadow-lg shadow-[#e32970] rounded-lg p-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mx-auto my-4">
+      <div className="bg-white shadow-lg shadow-[#e32970] rounded-lg p-6 w-[calc(full-1)] sm:w-[calc(1/2-1)] md:w-[calc(1/3-1)] lg:w-[calc(1/4-1)] xl:w-[calc(1/5-1)] mx-auto m-2">
+        {/* <div className="bg-white shadow-lg shadow-[#e32970] rounded-lg p-6 w-full sm:w-1/2 md:w-[calc(1/3-8px)] mx-auto m-2"> */}
         { (nft.crossmint_tesnet)? (
           <h2 className="text-[#e32970] text-md font-semibold">Goerly (Testnet)</h2>
         ):(
@@ -74,7 +75,7 @@ const Card = ({ nft }) => {
           src={nft.metadataURI}
           alt={nft.title}
         />
-        <h2 className="text-xl font-semibold mb-2">{nft.title}</h2>
+        <h2 className="text-xl font-semibold mb-2 text-center">{nft.title}</h2>
 
         <div className="flex flex-col justify-between items-center mt-3 text-[#e32970]">
           <div className="flex flex-col">

@@ -3,8 +3,14 @@ import { createGlobalState } from "react-hooks-global-state";
 import GatorCropped from "../assets/AlligatorCROPPED.png";
 import FlamingoCropped from "../assets/FlamingoCROPPED.png";
 import DolphinCropped from "../assets/DolphinCROPPED.png";
-import Dolphin from "../assets/dolphin.png";
-import Panther from "../assets/panther.png";
+
+import ETHMiami from "../assets/sponsors/ETHMiami.jpeg";
+import CMD from "../assets/sponsors/cmd.png";
+import Gitcoin from "../assets/sponsors/gitcoin.png";
+import Web3Equity from "../assets/sponsors/web3equity.png";
+import Algorand from "../assets/sponsors/Algorand.jpg";
+import Quicknode from "../assets/sponsors/Quicknode.png";
+import FIUBlockchain from "../assets/sponsors/FIUBlockchain.png";
 
 import * as THREE from "three";
 
@@ -99,6 +105,36 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
     //   cameraPosition: [],
     //   cost: 100,
     // },
+  ],
+  sponsors: [
+    {
+      name: "ETHMiami",
+      image: ETHMiami,
+    },
+    {
+      name: "cmdlabs.io",
+      image: CMD,
+    },
+    {
+      name: "Gitcoin",
+      image: Gitcoin,
+    },
+    {
+      name: "Web3 Equity",
+      image: Web3Equity,
+    },
+    {
+      name: "Algorand",
+      image: Algorand,
+    },
+    {
+      name: "Quicknode",
+      image: Quicknode,
+    },
+    {
+      name: "Blockchain at FIU",
+      image: FIUBlockchain,
+    },
   ],
   transactions: [
     {
