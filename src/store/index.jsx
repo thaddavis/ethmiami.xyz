@@ -1,8 +1,8 @@
 import { createGlobalState } from "react-hooks-global-state";
-// import GatorV1 from "../assets/AlligatorV1.png";
+
 import GatorCropped from "../assets/AlligatorCROPPED.png";
-// import Flamingo from "../assets/flamingo.png";
 import FlamingoCropped from "../assets/FlamingoCROPPED.png";
+import DolphinCropped from "../assets/DolphinCROPPED.png";
 import Dolphin from "../assets/dolphin.png";
 import Panther from "../assets/panther.png";
 
@@ -22,7 +22,6 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
       metadataURI: GatorCropped,
       title: "Gator",
       description: "Green",
-      aspectRatio: "aspect-[2142/1710]",
       model: "gator.glb",
       position: new THREE.Vector3(0, -10, 0),
       scale: new THREE.Vector3(0.4, 0.4, 0.4),
@@ -34,23 +33,21 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
       metadataURI: FlamingoCropped,
       title: "Flamingo",
       description: "Pink",
-      aspectRatio: "aspect-[1240/1240]",
-      model: "flamingo.glb",
+      model: "flamingo.gltf",
       position: new THREE.Vector3(0, 0, 0),
       scale: new THREE.Vector3(0.4, 0.4, 0.4),
-      cameraPosition: [0, -30, 90],
+      cameraPosition: [0, -30, 120],
       cost: 100,
     },
     {
       id: "dolphin",
-      metadataURI: Dolphin,
+      metadataURI: DolphinCropped,
       title: "Dolphin",
       description: "Grey",
-      aspectRatio: "aspect-[2228/1340]",
       model: "dolphin.glb",
-      position: [],
-      scale: [],
-      cameraPosition: [],
+      position: new THREE.Vector3(0, -20, 0),
+      scale: new THREE.Vector3(0.4, 0.4, 0.4),
+      cameraPosition: [0, 30, 140],
       cost: 100,
     },
     // {
