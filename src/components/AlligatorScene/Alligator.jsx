@@ -11,10 +11,10 @@ import { KeyLight } from "./Lights";
 import { FillLight } from "./FillLight";
 
 export const Alligator = (props) => {
-  // const model = useLoader(GLTFLoader, "/gator_anim.glb"); // *** this requires scale adjust must to  0.3,0.3,0.3
+  const model = useLoader(GLTFLoader, "/gator_anim.glb"); // *** this requires scale adjust must to  0.3,0.3,0.3
   // const model = useLoader(GLTFLoader, "/gator_rel.glb"); // *** this requires scale adjust must to  10,10,10
 
-  const model = useLoader(GLTFLoader, "/gator_animfix.glb"); // *** this requires scale adjust must to  0.3,0.3,0.3
+  // const model = useLoader(GLTFLoader, "/gator_animfix.glb"); // *** this requires scale adjust must to  0.3,0.3,0.3
 
   // Here's the animation part
   // *************************
