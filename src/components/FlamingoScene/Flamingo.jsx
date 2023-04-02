@@ -1,20 +1,16 @@
 import React from "react";
 
 import { useLoader, useFrame } from "@react-three/fiber";
+import { Sky } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import * as THREE from "three";
 
-export const Alligator = (props) => {
-  //   const model = useLoader(GLTFLoader, "/gator.glb");
-  // const model = useLoader(GLTFLoader, "/gator_anim.glb");
-  // const model = useLoader(GLTFLoader, "/gator_anim_B.glb");
-  // const model = useLoader(GLTFLoader, "/gator_anim_02.gltf", (loader) => {
-  //   const dracoLoader = new DRACOLoader();
-  //   dracoLoader.setDecoderPath("/");
-  //   loader.setDRACOLoader(dracoLoader);
-  // });
-  const model = useLoader(GLTFLoader, "/gator_03.glb");
+// import { GroundPlane } from "./GroundPlane";
+
+export const Flamingo = (props) => {
+  console.log("Flamingo");
+
+  const model = useLoader(GLTFLoader, "/flamingo.glb");
 
   // Here's the animation part
   // *************************
@@ -41,10 +37,21 @@ export const Alligator = (props) => {
   });
 
   return (
-    <primitive
-      object={model.scene}
-      scale={props.scale}
-      position={props.position}
-    />
+    <>
+      {/* <hemisphereLight args={["#0ff", "#333", 1]} /> */}
+      <Sky
+      // distance={45000}
+      // sunPosition={[5, 1, 8]}
+      // inclination={0}
+      // azimuth={0.25}
+      // {...props}
+      />
+      <primitive
+        object={model.scene}
+        scale={props.scale}
+        position={props.position}
+      />
+      {/* <GroundPlane /> */}
+    </>
   );
 };
