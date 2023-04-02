@@ -33,7 +33,7 @@ export const Header = () => {
         >
           About
         </li>
-        {/* <li className="mx-4 cursor-pointer">Community</li> */}
+        <li className="mx-4 cursor-pointer">Settings</li>
       </ul>
 
       {/* {connectedAccount ? (
