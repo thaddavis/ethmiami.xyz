@@ -105,8 +105,8 @@ const Card = ({ nft }) => {
 
           <CrossmintPayButton
           className="payButton"
-          clientId="80c3f288-e48b-4fb6-a7dc-3d43ca029451"
-          mintConfig={{"type":"thirdweb-drop","totalPrice":"0.001","quantity":"1"}}
+          clientId={nft.crossmint_clientId}
+          mintConfig={{"type":`${nft.crossmint_type}`,"totalPrice":`${nft.crossmint_totalPrice}`,"quantity":`${nft.crossmint_quantity}`}}
           environment="staging"
         />
 
