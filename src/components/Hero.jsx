@@ -64,7 +64,6 @@ export const Hero = () => {
         className="shadow-lg shadow-[#e32970] md:w-2/5 w-full 
       mt-10 md:mt-0 rounded-md overflow-hidden bg-white"
         onClick={() => {
-          console.log("___ ___ ___");
           navigate("/3d/gator");
         }}
       >
