@@ -63,39 +63,39 @@ const Card = ({ nft }) => {
 
   return (
     <>
-    <div className="bg-white shadow-md rounded-lg p-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mx-auto my-4">
-      <img
-        className="w-full h-48 object-contain aspect-square object-center mb-4 rounded"
-        src={nft.metadataURI}
-        alt={nft.title}
-      />
-      <h2 className="text-xl font-semibold mb-2">{nft.title}</h2>
+      <div className="bg-white shadow-lg shadow-[#e32970] rounded-lg p-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mx-auto my-4">
+        <img
+          className="w-full h-48 object-contain aspect-square object-center mb-4 rounded"
+          src={nft.metadataURI}
+          alt={nft.title}
+        />
+        <h2 className="text-xl font-semibold mb-2">{nft.title}</h2>
 
-      <div className="flex flex-col justify-between items-center mt-3 text-[#e32970]">
-        <div className="flex flex-col">
-          <small className="text-xs">Current Price</small>
-          <p className="text-sm font-semibold">{nft.cost} ETH</p>
-        </div>
+        <div className="flex flex-col justify-between items-center mt-3 text-[#e32970]">
+          <div className="flex flex-col">
+            <small className="text-xs">Current Price</small>
+            <p className="text-sm font-semibold">{nft.cost} ETH</p>
+          </div>
 
-        <span className="flex">
-          <button
-            className="shadow-md shadow-black text-white text-sm bg-[#e32970]
+          <span className="flex">
+            <button
+              className="shadow-md shadow-black text-white text-sm bg-[#e32970]
             hover:bg-[#bd255f] cursor-pointer rounded-full px-4 py-2 m-1 font-extrabold"
-            onClick={() => {
-              if (
-                nft.id === "gator" ||
-                nft.id === "flamingo" ||
-                nft.id === "dolphin"
-              ) {
-                navigate(`/3d/${nft.id}`);
-              } else {
-              }
-            }}
-          >
-            View
-          </button>
+              onClick={() => {
+                if (
+                  nft.id === "gator" ||
+                  nft.id === "flamingo" ||
+                  nft.id === "dolphin"
+                ) {
+                  navigate(`/3d/${nft.id}`);
+                } else {
+                }
+              }}
+            >
+              View
+            </button>
 
-          {/* <button
+            {/* <button
             className="shadow-md shadow-black text-white text-sm bg-[#e32970]
             hover:bg-[#bd255f] cursor-pointer rounded-full px-4 py-2 m-1"
             onClick={setNFT}
@@ -103,16 +103,19 @@ const Card = ({ nft }) => {
             Buy
           </button> */}
 
-          <CrossmintPayButton
-          className="payButton"
-          clientId={nft.crossmint_clientId}
-          mintConfig={{"type":`${nft.crossmint_type}`,"totalPrice":`${nft.crossmint_totalPrice}`,"quantity":`${nft.crossmint_quantity}`}}
-          environment="staging"
-        />
-
-        </span>
+            <CrossmintPayButton
+              className="payButton"
+              clientId={nft.crossmint_clientId}
+              mintConfig={{
+                type: `${nft.crossmint_type}`,
+                totalPrice: `${nft.crossmint_totalPrice}`,
+                quantity: `${nft.crossmint_quantity}`,
+              }}
+              environment="staging"
+            />
+          </span>
+        </div>
       </div>
-    </div>
     </>
   );
 };

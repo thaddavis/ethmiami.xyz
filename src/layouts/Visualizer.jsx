@@ -2,8 +2,8 @@ import React, { Suspense } from "react";
 import { useLoader, Canvas, useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-import { Flamingo } from "../components/Flamingo";
-import { Alligator } from "../components/Alligator";
+import { Flamingo } from "../components/FlamingoScene/Flamingo";
+import { Alligator } from "../components/AlligatorScene/Alligator";
 import { Dolphin } from "../components/Dolphin";
 
 import { useParams } from "react-router-dom";
@@ -65,6 +65,11 @@ export const Visualizer = () => {
           rotateSpeed={2}
           autoRotate={true}
           autoRotateSpeed={5}
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI * 0.5}
+          // maxAzimuthAngle={Math.PI * 0.5}
+          // minAzimuthAngle={0}
+          // up={new THREE.Vector3(1, 0, 0)}
         />
         <ambientLight />
 

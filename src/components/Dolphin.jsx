@@ -2,13 +2,12 @@ import React from "react";
 
 import { useLoader, useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+import { Sky } from "@react-three/drei";
 import * as THREE from "three";
 
 export const Dolphin = (props) => {
-  console.log("Dolphin but flamingo");
-
-  //   const model = useLoader(GLTFLoader, "/dolphinA.glb");
-  const model = useLoader(GLTFLoader, "/dolphinB.glb");
+  const model = useLoader(GLTFLoader, "/dolphin_fix01.glb");
 
   // Here's the animation part
   // *************************
@@ -35,10 +34,23 @@ export const Dolphin = (props) => {
   });
 
   return (
-    <primitive
-      object={model.scene}
-      scale={props.scale}
-      position={props.position}
-    />
+    <>
+      {/* <Sky
+      distance={45000}
+      sunPosition={[5, 1, 8]}
+      inclination={0}
+      azimuth={0.25}
+      {...props}
+      /> */}
+
+      <primitive
+        object={model.scene}
+        scale={props.scale}
+        position={props.position}
+      />
+
+      {/* <ambientLight intensity={0.5} color={[0, 0, 255]} /> */}
+      <color attach="background" args={["#009dc4"]} />
+    </>
   );
 };
