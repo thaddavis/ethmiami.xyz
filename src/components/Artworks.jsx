@@ -64,6 +64,11 @@ const Card = ({ nft }) => {
   return (
     <>
       <div className="bg-white shadow-lg shadow-[#e32970] rounded-lg p-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mx-auto my-4">
+        { (nft.crossmint_tesnet)? (
+          <h2 className="text-[#e32970] text-md font-semibold">Goerly (Testnet)</h2>
+        ):(
+          <h2 className="text-[#e32970] text-md font-bold">Ethereum Mainnet</h2>
+        )}
         <img
           className="w-full h-48 object-contain aspect-square object-center mb-4 rounded"
           src={nft.metadataURI}
@@ -103,6 +108,18 @@ const Card = ({ nft }) => {
             Buy
           </button> */}
 
+          { (nft.crossmint_tesnet)? (
+            <CrossmintPayButton
+            className="payButton"
+            clientId={nft.crossmint_clientId}
+            mintConfig={{
+              type: `${nft.crossmint_type}`,
+              totalPrice: `${nft.crossmint_totalPrice}`,
+              quantity: `${nft.crossmint_quantity}`,
+            }}
+            environment="staging"
+          />
+          ) : (
             <CrossmintPayButton
               className="payButton"
               clientId={nft.crossmint_clientId}
@@ -111,8 +128,8 @@ const Card = ({ nft }) => {
                 totalPrice: `${nft.crossmint_totalPrice}`,
                 quantity: `${nft.crossmint_quantity}`,
               }}
-              environment="staging"
-            />
+            />            
+          ) }
           </span>
         </div>
       </div>
