@@ -24,7 +24,8 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
       description: "Green",
       model: "gator.glb",
       position: new THREE.Vector3(0, 0.1, 0),
-      scale: new THREE.Vector3(0.3, 0.3, 0.3),
+      // scale: new THREE.Vector3(0.3, 0.3, 0.3), // gator_anim.glb
+      scale: new THREE.Vector3(10, 10, 10), // gator_rel.glb
       cameraPosition: [0, 40, 80],
       cost: 100,
       crossmint_clientId: "db7f522b-3d9b-49ee-b55a-597fd53708ba",
