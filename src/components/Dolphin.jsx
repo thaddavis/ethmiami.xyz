@@ -2,13 +2,21 @@ import React from "react";
 
 import { useLoader, useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import * as THREE from "three";
 
 export const Dolphin = (props) => {
   console.log("Dolphin but flamingo");
 
   //   const model = useLoader(GLTFLoader, "/dolphinA.glb");
-  const model = useLoader(GLTFLoader, "/dolphinB.glb");
+  // const model = useLoader(GLTFLoader, "/dolphinB.glb");
+  //   const model = useLoader(GLTFLoader, "/dolphinC.glb");
+  // const model = useLoader(GLTFLoader, "/dolph_01.glb");
+  const model = useLoader(GLTFLoader, "/dolph01.glb", (loader) => {
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("/draco-gltf/");
+    loader.setDRACOLoader(dracoLoader);
+  });
 
   // Here's the animation part
   // *************************
