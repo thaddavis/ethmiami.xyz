@@ -40,6 +40,7 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
       crossmint_totalPrice: "0.03",
       crossmint_quantity: "1",
       crossmint_enviroment: "staging",
+      crossmint_tesnet: true,
     },
     {
       id: "flamingo",
@@ -56,6 +57,7 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
       crossmint_totalPrice: "0.03",
       crossmint_quantity: "1",
       crossmint_enviroment: "staging",
+      crossmint_tesnet: true,
     },
     {
       id: "dolphin",
@@ -72,6 +74,24 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
       crossmint_totalPrice: "0.03",
       crossmint_quantity: "1",
       crossmint_enviroment: "staging",
+      crossmint_tesnet: true,
+    },
+    {
+      id: "gator",
+      metadataURI: GatorCropped,
+      title: "Gator",
+      description: "Green",
+      model: "gator.glb",
+      position: new THREE.Vector3(0, 0.1, 0),
+      scale: new THREE.Vector3(10, 10, 10), // gator_withoutanim.glb
+      cameraPosition: [0, 40, 80],
+      cost: 0.5,
+      crossmint_clientId: "edb3e96a-80d0-417b-8810-1d78c8c0e514",
+      crossmint_type: "thirdweb-drop",
+      crossmint_totalPrice: "0.5",
+      crossmint_quantity: "1",
+      crossmint_enviroment: "",
+      crossmint_tesnet: false,
     },
     // {
     //   id: "panther",

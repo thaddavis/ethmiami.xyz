@@ -4,6 +4,8 @@ import { setGlobalState, useGlobalState } from "../store";
 import { useNavigate } from "react-router-dom";
 import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
 
+import SwitchButton from './SwitchButton';
+
 export const Artworks = () => {
   const [nfts] = useGlobalState("nfts");
   const [end, setEnd] = useState(4);
@@ -17,6 +19,12 @@ export const Artworks = () => {
   useEffect(() => {
     setCollection(getCollection());
   }, [nfts, end]);
+  
+  const [isProduction, setIsProduction] = useState(false);
+
+  const handleToggle = (value) => {
+    setIsProduction(value);
+  };
 
   return (
     <div className="bg-white gradient-bg-artworks">
@@ -25,13 +33,16 @@ export const Artworks = () => {
           {collection.length > 0 ? "Featured" : "No Artwork Yet"}
         </h4>
 
+        <SwitchButton onToggle={handleToggle} />
+
         {/* <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-3 py-2.5"> */}
         {/* <div className="container mx-auto px-4 py-8"> */}
         {/* <div className="bg-white shadow-md rounded-lg p-6 mx-2 my-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3"> */}
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-wrap">
             {collection.map((nft, i) => (
-              <Card key={i} nft={nft} />
+              (nft.crossmint_tesnet === !isProduction) ? (
+              <Card key={i} nft={nft} />) : null
             ))}
           </div>
         </div>
@@ -65,6 +76,11 @@ const Card = ({ nft }) => {
     <>
       <div className="bg-white shadow-lg shadow-[#e32970] rounded-lg p-6 w-[calc(full-1)] sm:w-[calc(1/2-1)] md:w-[calc(1/3-1)] lg:w-[calc(1/4-1)] xl:w-[calc(1/5-1)] mx-auto m-2">
         {/* <div className="bg-white shadow-lg shadow-[#e32970] rounded-lg p-6 w-full sm:w-1/2 md:w-[calc(1/3-8px)] mx-auto m-2"> */}
+        { (nft.crossmint_tesnet)? (
+          <h2 className="text-[#e32970] text-md font-semibold">Goerli (Testnet)</h2>
+        ):(
+          <h2 className="text-[#e32970] text-md font-bold">Ethereum Mainnet</h2>
+        )}
         <img
           className="w-full h-48 object-contain aspect-square object-center mb-4 rounded"
           src={nft.metadataURI}
@@ -104,6 +120,18 @@ const Card = ({ nft }) => {
             Buy
           </button> */}
 
+          { (nft.crossmint_tesnet)? (
+            <CrossmintPayButton
+            className="payButton"
+            clientId={nft.crossmint_clientId}
+            mintConfig={{
+              type: `${nft.crossmint_type}`,
+              totalPrice: `${nft.crossmint_totalPrice}`,
+              quantity: `${nft.crossmint_quantity}`,
+            }}
+            environment="staging"
+          />
+          ) : (
             <CrossmintPayButton
               className="payButton"
               clientId={nft.crossmint_clientId}
@@ -112,8 +140,8 @@ const Card = ({ nft }) => {
                 totalPrice: `${nft.crossmint_totalPrice}`,
                 quantity: `${nft.crossmint_quantity}`,
               }}
-              environment="staging"
-            />
+            />            
+          ) }
           </span>
         </div>
       </div>
